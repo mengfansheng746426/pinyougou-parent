@@ -13,4 +13,9 @@ app.service('cartService',function($http){
 	this.findAddressListByUserId=function(){
 		return $http.get("./address/findListByUserId.do");
 	}
+	//保存订单
+	this.submitOrder=function(order){
+		return $http.post('order/add.do',order);		
+	}
+
 });

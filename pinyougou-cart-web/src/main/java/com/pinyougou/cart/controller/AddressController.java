@@ -63,6 +63,9 @@ public class AddressController {
 	@RequestMapping("/add")
 	public Result add(@RequestBody TbAddress address){
 		try {
+			String userId = SecurityContextHolder.getContext().getAuthentication().getName();
+			address.setUserId(userId);
+			
 			addressService.add(address);
 			return new Result(true, "增加成功");
 		} catch (Exception e) {

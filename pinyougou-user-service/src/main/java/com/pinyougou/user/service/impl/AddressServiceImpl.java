@@ -1,4 +1,5 @@
 package com.pinyougou.user.service.impl;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.alibaba.dubbo.config.annotation.Service;
@@ -46,6 +47,19 @@ public class AddressServiceImpl implements AddressService {
 	 */
 	@Override
 	public void add(TbAddress address) {
+		if(address.getIsDefault().equals("1")) {
+			TbAddressExample example=new TbAddressExample();
+			Criteria criteria = example.createCriteria();
+			criteria.andIsDefaultEqualTo("1");
+			List<TbAddress> list = addressMapper.selectByExample(example);
+			if(list!=null) {
+				for (TbAddress address1 : list) {
+					address1.setIsDefault("0");
+					addressMapper.updateByPrimaryKey(address1);
+				}
+			}
+		}
+		address.setCreateDate(new Date());
 		addressMapper.insert(address);		
 	}
 
@@ -55,8 +69,21 @@ public class AddressServiceImpl implements AddressService {
 	 */
 	@Override
 	public void update(TbAddress address){
+		if(address.getIsDefault().equals("1")) {
+			TbAddressExample example=new TbAddressExample();
+			Criteria criteria = example.createCriteria();
+			criteria.andIsDefaultEqualTo("1");
+			List<TbAddress> list = addressMapper.selectByExample(example);
+			if(list!=null) {
+				for (TbAddress address1 : list) {
+					address1.setIsDefault("0");
+					addressMapper.updateByPrimaryKey(address1);
+				}
+			}
+		}
 		addressMapper.updateByPrimaryKey(address);
 	}	
+		
 	
 	/**
 	 * 根据ID获取实体

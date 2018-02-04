@@ -13,6 +13,7 @@
     
     <script type="text/javascript" src="./js/base.js"></script>
     <script type="text/javascript" src="./js/service/cartService.js"></script>
+    <script type="text/javascript" src="./js/service/addressService.js"></script>
     <script type="text/javascript" src="./js/controller/cartController.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/webbase.css" />
@@ -67,7 +68,7 @@
 			<div class="checkout-steps">
 				<!--收件人信息-->
 				<div class="step-tit">
-					<h5>收件人信息<span><a data-toggle="modal" data-target=".edit" data-keyboard="false" class="newadd">新增收货地址</a></span></h5>
+					<h5>收件人信息<span><a data-toggle="modal" data-target=".edit" data-keyboard="false" class="newadd" ng-click="entity={}">新增收货地址</a></span></h5>
 				</div>
 				<div class="step-cont">
 					<div class="addressInfo">
@@ -78,7 +79,7 @@
 								<div class="con name {{isSelectedAddress(address)?'selected':''}}"><a href="javascript:;" ng-click="selectAddress(address)">{{address.contact}}<span title="点击取消选择">&nbsp;</a></div>
 								<div class="con address">{{address.contact}} {{address.address}} <span>{{address.mobile}}</span>
 									<span class="base" ng-if="address.isDefault == '1'">默认地址</span>
-									<span class="edittext"><a data-toggle="modal" data-target=".edit" data-keyboard="false" >编辑</a>&nbsp;&nbsp;<a href="javascript:;">删除</a></span>
+									<span ><a data-toggle="modal" data-target=".edit" data-keyboard="false" ng-click="findOne(address.id)">编辑</a>&nbsp;&nbsp;<a href="javascript:;" ng-click="dele(address.id)">删除</a></span>
 								</div>
 								<div class="clearfix"></div>
 							  </div>
@@ -97,37 +98,35 @@
 						      <div class="modal-body">
 						      	<form action="" class="sui-form form-horizontal">
 						      		 <div class="control-group">
-									    <label class="control-label">收货人：</label>
+									    <label class="control-label" >收货人：</label>
 									    <div class="controls">
-									      <input type="text" class="input-medium">
+									      <input ng-model="entity.contact" type="text" class="input-medium">
 									    </div>
 									  </div>
 									   
 									   <div class="control-group">
-									    <label class="control-label">详细地址：</label>
+									    <label class="control-label" >详细地址：</label>
 									    <div class="controls">
-									      <input type="text" class="input-large">
+									      <input ng-model="entity.address" type="text" class="input-large">
 									    </div>
 									  </div>
 									   <div class="control-group">
-									    <label class="control-label">联系电话：</label>
+									    <label class="control-label" >联系电话：</label>
 									    <div class="controls">
-									      <input type="text" class="input-medium">
+									      <input ng-model="entity.mobile" type="text" class="input-medium">
 									    </div>
 									  </div>
-									   <div class="control-group">
-									    <label class="control-label">邮箱：</label>
-									    <div class="controls">
-									      <input type="text" class="input-medium">
-									    </div>
-									  </div>
-									   <div class="control-group">
-									    <label class="control-label">地址别名：</label>
-									    <div class="controls">
-									      <input type="text" class="input-medium">
-									    </div>
+									  
+									  <div class="control-group">
+									    
 									    <div class="othername">
 									    	建议填写常用地址：<a href="#" class="sui-btn btn-default">家里</a>　<a href="#" class="sui-btn btn-default">父母家</a>　<a href="#" class="sui-btn btn-default">公司</a>
+									    </div>
+									  </div>
+									  <div class="control-group">
+									    <label class="control-label">是否默认地址：</label>
+									    <div class="controls">
+									      <input ng-model="entity.isDefault" type="checkbox"  class="input-medium" ng-true-value="1" ng-false-value="0">
 									    </div>
 									  </div>
 									  
@@ -136,7 +135,7 @@
 						      	
 						      </div>
 						      <div class="modal-footer">
-						        <button type="button" data-ok="modal" class="sui-btn btn-primary btn-large">确定</button>
+						        <button type="button" data-ok="modal" class="sui-btn btn-primary btn-large" ng-click="save()">确定</button>
 						        <button type="button" data-dismiss="modal" class="sui-btn btn-default btn-large">取消</button>
 						      </div>
 						    </div>
@@ -230,7 +229,7 @@
 		</div>
 		<div class="clearfix trade">
 			<div class="fc-price">应付金额:　<span class="price">¥{{totalValue.totalMoney.toFixed(2)}}</span></div>
-			<div class="fc-receiverInfo">寄送至:{{selectedAddress.address}} 收货人：{{selectedAddress.contact}} {{selectedAddress.mobile}}</div>
+			<div class="fc-receiverInfo">寄送至:{{address.address}} 收货人：{{address.contact}} {{address.mobile}}</div>
 		</div>
 		<div class="submit">
 			<a class="sui-btn btn-danger btn-xlarge" ng-click="submitOrder()">提交订单</a>

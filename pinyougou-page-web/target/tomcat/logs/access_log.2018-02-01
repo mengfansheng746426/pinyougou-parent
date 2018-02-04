@@ -1016,3 +1016,15 @@
 0:0:0:0:0:0:0:1 - - [01/Feb/2018:17:44:49 +0800] "GET /img/icons.png HTTP/1.1" 200 37691 http-bio-9105-exec-6 13
 0:0:0:0:0:0:0:1 - - [01/Feb/2018:17:44:49 +0800] "GET /js/plugins/jquery/jquery.min.map HTTP/1.1" 404 1015 http-bio-9105-exec-6 1
 0:0:0:0:0:0:0:1 - - [01/Feb/2018:17:44:49 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-6 0
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:18:47 +0800] "GET /149187842867960.html HTTP/1.1" 304 - http-bio-9105-exec-1 150
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:18:47 +0800] "GET /js/controller/itemPageController.js HTTP/1.1" 304 - http-bio-9105-exec-7 37
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:18:47 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-8 7
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:18:47 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-9 1
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:18:48 +0800] "GET /assets/img/favicon.ico HTTP/1.1" 404 995 http-bio-9105-exec-10 1
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:20:19:29 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-10 7
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:32:49 +0800] "GET /149187842867960.html HTTP/1.1" 304 - http-bio-9105-exec-1 67
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:32:49 +0800] "GET /js/controller/itemPageController.js HTTP/1.1" 304 - http-bio-9105-exec-7 3
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:32:49 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-8 6
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:32:50 +0800] "GET /index/index.js HTTP/1.1" 404 979 http-bio-9105-exec-9 1
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:46:40 +0800] "GET /149187842867930.html HTTP/1.1" 404 991 http-bio-9105-exec-8 2
+0:0:0:0:0:0:0:1 - - [01/Feb/2018:23:46:40 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9105-exec-8 1

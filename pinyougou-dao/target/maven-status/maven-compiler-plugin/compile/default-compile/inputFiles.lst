@@ -11,9 +11,11 @@ F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pi
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbOrderItemMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbAddressMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbProvincesMapper.java
+F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbSeckillOrderMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbGoodsDescMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbSpecificationOptionMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbBrandMapper.java
+F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbSeckillGoodsMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbContentCategoryMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbCitiesMapper.java
 F:\develop\eclipse\workspace\pinyougou-parent\pinyougou-dao\src\main\java\com\pinyougou\mapper\TbFreightTemplateMapper.java
